@@ -33,11 +33,13 @@ s nincs nálad fülvédő.
   print("8:\n${vers.trim()}");         // whitespace eltávolítása
   print("9:\n${vers.replaceAll(" ", "-")}"); // szóközök helyett kötőjel
   print("10:\n${vers.substring(4)}");  // a 4. karaktertől a végéig
-
+  // Az 5. karakteről a végéig, melynek az elején ... (három pont és szóköz) van
+  print("11:\n... ${vers.substring(5)}");
   // Unicode kódok első három karakterre
-  String FirstHalf = vers.runes.elementAt(0) as String;
-  String SecondHalf = vers.runes.elementAt(1) as String;
-  String ThirdHalf = vers.runes.elementAt(2) as String;
-  String LeftBehind = vers.substring(3);
-  print(FirstHalf + SecondHalf + ThirdHalf + LeftBehind);
+  String FirstHalf = vers.runes.elementAt(0).toRadixString(16);   // Első karakter Unicode kódja
+  String SecondHalf = vers.runes.elementAt(1).toRadixString(16);  // Második karakter Unicode kódja
+  String ThirdHalf = vers.runes.elementAt(2).toRadixString(16);   // Harmadik karakter Unicode kódja
+  String LeftBehind = vers.substring(3); // A 3. karaktertől a végéig
+  print(FirstHalf + ", " + SecondHalf + ", " + ThirdHalf + ", " + LeftBehind); // Összeillesztve
+  print("12:\n${vers.substring(10)} ..."); // A 10. karaktertől a végéig, melynek a végén ... (szóköz és három pont) van
 }
