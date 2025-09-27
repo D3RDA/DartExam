@@ -35,9 +35,9 @@ s nincs nálad fülvédő.
   print("10:\n${vers.substring(4)}");  // a 4. karaktertől a végéig
 
   // Unicode kódok első három karakterre
-  String FirstHalf = vers.runes.elementAt(0);
-  String SecondHalf = vers.runes.elementAt(1);
-  String ThirdHalf = vers.runes.elementAt(2);
+  String FirstHalf = vers.runes.elementAt(0) as String;
+  String SecondHalf = vers.runes.elementAt(1) as String;
+  String ThirdHalf = vers.runes.elementAt(2) as String;
   String LeftBehind = vers.substring(3);
   print(FirstHalf + SecondHalf + ThirdHalf + LeftBehind);
 }

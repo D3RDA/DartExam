@@ -36,4 +36,5 @@ a kerti virágok ...
   print("Enter name:");
   String myName = stdin.readLineSync()!;    // ? lehet null ! nem lehet null
   print("The entered name is ${myName}");
+  print(teljesNev);
 }
