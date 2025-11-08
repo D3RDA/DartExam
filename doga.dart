@@ -31,10 +31,19 @@ void main(List<String> args) {
 
 String headTail(String txt) {
   int len = txt.length;
-  double mid = len / 2;
-  String elsoFel = txt.substring(0, mid.floor());
-  String masodikFel = txt.substring(mid.floor(), len);
-  return masodikFel + elsoFel;
+  if (len <= 1) return txt;
+  if (len % 2 == 0) {
+    int mid = len ~/ 2;
+    String firstHalf = txt.substring(0, mid);
+    String secondHalf = txt.substring(mid);
+    return secondHalf + firstHalf;
+  } else {
+    int mid = len ~/ 2;
+    String firstPart = txt.substring(0, mid);
+    String middleChar = txt[mid];
+    String lastPart = txt.substring(mid + 1);
+    return lastPart + middleChar + firstPart;
+  }
 }
 
 // 2. feladat
