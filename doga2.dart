@@ -1,12 +1,9 @@
-import 'dart:math';
-import 'dart:io';
 // 1. Sum Arrays
 // Írj egy olyan függvényt, amely egy számokból álló tömböt vesz fel, és a számok összegét adja vissza. A számok lehetnek negatívak vagy nem egész számok. Ha a tömb nem tartalmaz számokat, akkor 0-t kell visszaadnia.
-
 num sum(List<num> arr) {
   num total = 0;
-  for (var num in arr) {
-    total += num;
+  for (var x in arr) {
+    total += x;
   }
   return total;
 }
@@ -65,15 +62,19 @@ int duplicateCount(String text) {
   return duplicates;
 }
 
+// Kiíratások
 void main() {
+  // 1. feladat tesztelése
   print("1. feladat tesztelése:");
   print("Egész számok: ${sum([1, 2, 3, 4, 5])}");
   print("Minusz számok: ${sum([-1, -2, -3, -4, -5])} ");
   print("Tört számok: ${sum([1.5, 2.5, 3.5])}");
   print("Vegyes számok: ${sum([1, -2, 3.5, -4.5])}");
   print("Üres tömb: ${sum([])}");
+  // 2. feladat tesztelése
   print("\n2. feladat tesztelése:");
   print("Eredmény: ${oddOnesOut([1, 2, 3, 2, 4, 3, 8, 1, 6, 5, 6, 7])}");
+  // 3. feladat tesztelése
   print("\n3. feladat tesztelése:");
   print(
     "Eredmény: ${flattenAndSort([
@@ -83,6 +84,7 @@ void main() {
       [9, 7, 8],
     ])}",
   );
+  // 4. feladat tesztelése
   print("\n4. feladat tesztelése:");
   print("Eredmény: ${duplicateCount('22aA11')}");
   print("Eredmény: ${duplicateCount('abcde')}");
